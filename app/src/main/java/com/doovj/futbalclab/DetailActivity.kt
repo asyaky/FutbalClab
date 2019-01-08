@@ -1,7 +1,6 @@
 package com.doovj.futbalclab
 
 import android.graphics.Color
-import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
@@ -30,17 +29,8 @@ class DetailActivity : AppCompatActivity() {
 
     class DetailActivityUI(var clab: Clab) : AnkoComponent<DetailActivity> {
         override fun createView(ui: AnkoContext<DetailActivity>) = with(ui) {
-            verticalLayout{
+            linearLayout{
                 padding = dip(16)
-
-                textView{
-                    id = FutbalClabUI.nameId
-                    padding = dip(16)
-                    text = clab.namaklab
-                    textColor = Color.BLACK
-                    gravity = Gravity.CENTER_HORIZONTAL
-                    textSize = 16f
-                }.lparams(matchParent, wrapContent)
 
                 imageView{
                     Glide.with(this).load(clab.gambarklab).into(this)
@@ -50,15 +40,27 @@ class DetailActivity : AppCompatActivity() {
                         snackbar("I love ${clab.namaklab}!")
                     }
 
-                    this@verticalLayout.gravity = Gravity.CENTER_HORIZONTAL
-                }.lparams(dip(150), dip(150))
+                    this@linearLayout.gravity = Gravity.CENTER_HORIZONTAL
+                }.lparams(dip(120), dip(120))
 
-                textView{
-                    id = FutbalClabUI.descriptionId
-                    text = clab.deskripsiklab
+                verticalLayout {
                     padding = dip(16)
-                    gravity = Gravity.CENTER_HORIZONTAL
-                }.lparams(matchParent, wrapContent)
+
+                    textView{
+                        id = FutbalClabUI.nameId
+                        text = clab.namaklab
+                        textColor = Color.BLACK
+                        textSize = 17f
+                    }.lparams(matchParent, wrapContent) {
+                        bottomMargin = dip(16)
+                    }
+
+                    textView{
+                        id = FutbalClabUI.descriptionId
+                        text = clab.deskripsiklab
+                        lines = 2
+                    }.lparams(matchParent, wrapContent)
+                }
             }
         }
     }
