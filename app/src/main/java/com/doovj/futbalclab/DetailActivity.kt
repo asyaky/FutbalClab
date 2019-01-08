@@ -1,5 +1,6 @@
 package com.doovj.futbalclab
 
+import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -36,7 +37,7 @@ class DetailActivity : AppCompatActivity() {
                     id = FutbalClabUI.nameId
                     padding = dip(16)
                     text = clab.namaklab
-                    typeface = Typeface.DEFAULT_BOLD
+                    textColor = Color.BLACK
                     gravity = Gravity.CENTER_HORIZONTAL
                     textSize = 16f
                 }.lparams(matchParent, wrapContent)
