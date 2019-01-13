@@ -24,8 +24,8 @@ class ClabRecyclerViewAdapter(private val clabs: MutableList<Clab>, private val 
         // var tvDeskripsion : TextView
 
         init {
-            tvNem = view.findViewById(FutbalClabUI.nameId)
-            ivImej = view.findViewById(FutbalClabUI.imageId)
+            tvNem = view.findViewById(R.id.nameId)
+            ivImej = view.findViewById(R.id.imageId)
             // tvDeskripsion = view.findViewById(FutbalClabUI.descriptionId)
         }
 

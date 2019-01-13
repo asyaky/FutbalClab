@@ -34,7 +34,7 @@ class DetailActivity : AppCompatActivity() {
 
                 imageView{
                     Glide.with(this).load(clab.gambarklab).into(this)
-                    id = FutbalClabUI.imageId
+                    id = R.id.imageId
 
                     setOnClickListener {
                         snackbar("I love ${clab.namaklab}!")
@@ -47,7 +47,7 @@ class DetailActivity : AppCompatActivity() {
                     padding = dip(16)
 
                     textView{
-                        id = FutbalClabUI.nameId
+                        id = R.id.nameId
                         text = clab.namaklab
                         textColor = Color.BLACK
                         textSize = 17f
@@ -56,7 +56,7 @@ class DetailActivity : AppCompatActivity() {
                     }
 
                     textView{
-                        id = FutbalClabUI.descriptionId
+                        id = R.id.descriptionId
                         text = clab.deskripsiklab
                         lines = 2
                     }.lparams(matchParent, wrapContent)
